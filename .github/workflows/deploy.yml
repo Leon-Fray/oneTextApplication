@@ -25,9 +25,6 @@ jobs:
         with:
           node-version: '18' # Or your preferred Node.js version
 
-      - name: Install dependencies
-        run: npm install # Add this if you have a package.json and dependencies
-
       - name: Inject API Key
         run: |
           # Replace the placeholder with the actual secret value

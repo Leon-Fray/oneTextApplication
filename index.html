@@ -299,9 +299,28 @@
     </div>
 
     <script src="config.js"></script>
-    <script src="context.js"></script>
-    <script src="script.js"></script>
     <script>
+        // Load the context data
+        let newContext;
+        let isContextLoaded = false;
+
+        // Load context before allowing chat
+        fetch('http://localhost:3000/api/context')
+            .then(response => response.json())
+            .then(data => {
+                newContext = data;
+                isContextLoaded = true;
+                console.log('Context loaded successfully:', newContext);
+            })
+            .catch(error => {
+                console.error('Error loading context:', error);
+                const chatMessages = document.getElementById('chatMessages');
+                const errorMessageDiv = document.createElement('div');
+                errorMessageDiv.className = 'message bot-message';
+                errorMessageDiv.textContent = 'Error: Failed to load context data. Please refresh the page.';
+                chatMessages.appendChild(errorMessageDiv);
+            });
+
         document.addEventListener('DOMContentLoaded', function() {
             const chatButton = document.getElementById('chatButton');
             const chatContainer = document.getElementById('chatContainer');
@@ -318,74 +337,64 @@
             // Send message function
             async function sendMessage() {
                 const message = chatInput.value.trim();
-                if (message) {
-                    // Add user message
-                    const userMessageDiv = document.createElement('div');
-                    userMessageDiv.className = 'message user-message';
-                    userMessageDiv.textContent = message;
-                    chatMessages.appendChild(userMessageDiv);
+                if (!message) return;
+                
+                if (!isContextLoaded) {
+                    const errorMessageDiv = document.createElement('div');
+                    errorMessageDiv.className = 'message bot-message';
+                    errorMessageDiv.textContent = 'Please wait while the context is loading...';
+                    chatMessages.appendChild(errorMessageDiv);
+                    return;
+                }
 
-                    // Clear input
-                    chatInput.value = '';
+                // Add user message
+                const userMessageDiv = document.createElement('div');
+                userMessageDiv.className = 'message user-message';
+                userMessageDiv.textContent = message;
+                chatMessages.appendChild(userMessageDiv);
 
-                    // Show typing indicator
-                    typingIndicator.style.display = 'block';
+                // Clear input
+                chatInput.value = '';
 
-                    try {
-                        const response = await fetch('https://api.openai.com/v1/chat/completions', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Authorization': `Bearer ${config.OPENAI_API_KEY}`
-                            },
-                            body: JSON.stringify({
-                                model: config.CHATBOT_CONFIG.model,
-                                messages: [
-                                    {
-                                        role: "system",
-                                        content: config.CHATBOT_CONFIG.system_prompt
-                                    },
-                                    {
-                                        role: "user",
-                                        content: `Here is the context from the JSON files:
+                // Show typing indicator
+                typingIndicator.style.display = 'block';
 
-QUESTIONS.JSON:
-${JSON.stringify(questionsJson, null, 2)}
+                try {
+                    const response = await fetch('http://localhost:3000/api/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: message,
+                            context: {
+                                system_prompt: window.config.CHATBOT_CONFIG.system_prompt,
+                                data: newContext
+                            }
+                        })
+                    });
 
-BONUS_QUESTIONS.JSON:
-${JSON.stringify(bonusQuestionsJson, null, 2)}
-
-USER_MANUAL.JSON:
-${JSON.stringify(userManualJson, null, 2)}
-
-User question: ${message}`
-                                    }
-                                ],
-                                temperature: config.CHATBOT_CONFIG.temperature,
-                                max_tokens: config.CHATBOT_CONFIG.max_tokens
-                            })
-                        });
-
-                        const data = await response.json();
-                        
-                        if (data.choices && data.choices[0]) {
-                            const botMessageDiv = document.createElement('div');
-                            botMessageDiv.className = 'message bot-message';
-                            botMessageDiv.textContent = data.choices[0].message.content;
-                            chatMessages.appendChild(botMessageDiv);
-                        } else {
-                            throw new Error('Invalid response from API');
-                        }
-                    } catch (error) {
-                        console.error('Error:', error);
-                        const errorMessageDiv = document.createElement('div');
-                        errorMessageDiv.className = 'message bot-message';
-                        errorMessageDiv.textContent = "I apologize, but I'm having trouble connecting right now. Please try again later.";
-                        chatMessages.appendChild(errorMessageDiv);
-                    } finally {
-                        typingIndicator.style.display = 'none';
-                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    const data = await response.json();
+                    
+                    if (data.response) {
+                        const botMessageDiv = document.createElement('div');
+                        botMessageDiv.className = 'message bot-message';
+                        botMessageDiv.textContent = data.response;
+                        chatMessages.appendChild(botMessageDiv);
+                    } else if (data.error) {
+                        throw new Error(data.details || data.error);
+                    } else {
+                        throw new Error('Invalid response from server');
                     }
+                } catch (error) {
+                    console.error('Error:', error);
+                    const errorMessageDiv = document.createElement('div');
+                    errorMessageDiv.className = 'message bot-message';
+                    errorMessageDiv.textContent = `Error: ${error.message || "I'm having trouble connecting right now. Please try again later."}`;
+                    chatMessages.appendChild(errorMessageDiv);
+                } finally {
+                    typingIndicator.style.display = 'none';
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
                 }
             }
 

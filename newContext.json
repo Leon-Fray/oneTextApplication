@@ -1,0 +1,104 @@
+{
+    "name": "Leon Fray",
+    "summary": "Software Engineer with full-stack experience, particularly strong in Chrome extension development, back-end APIs, and startup environments. Thrives in fast-paced, high-ownership roles.",
+    "experience": {
+      "current_or_last_role": {
+        "position": "Software Engineer",
+        "company": "Hexagon",
+        "responsibilities": [
+          "Built scalable back-end services for OnCall Dispatch Smart Advisor",
+          "Implemented RESTful APIs and optimized MongoDB indexing",
+          "Designed reusable modules for faster development"
+        ]
+      },
+      "notable_projects": [
+        {
+          "name": "Chrome AI Extension",
+          "description": "Extension that uses OpenAI’s API to analyze English articles and converse in French",
+          "purpose": "Built for personal learning and language immersion"
+        },
+        {
+          "name": "Healthcare Appointment App",
+          "stack": "MERN",
+          "features": [
+            "Role-based authentication",
+            "MVC structure",
+            "Admin panel"
+          ],
+          "link": "https://github.com/Leon-Fray/AppointmentBookingProject"
+        }
+      ]
+    },
+    "technical_skills": {
+      "languages_and_frameworks": ["JavaScript", "Node.js", "Express.js", "MongoDB", "React"],
+      "browser_extension_skills": [
+        "Chrome extension APIs",
+        "Manifest v3",
+        "Event-driven design",
+        "Content/background scripts"
+      ],
+      "testing": ["Jest", "Postman", "Chrome DevTools"],
+      "practices": [
+        "Modular development",
+        "MVP-first approach",
+        "Caching and performance optimization"
+      ]
+    },
+    "philosophy_and_preferences": {
+      "problem_solving": "Breaks problems into manageable parts, iterates and pivots as needed",
+      "UX_approach": "Fast, simple, non-intrusive, privacy-respecting, minimal permissions",
+      "testing_style": "Unit and integration testing with static checks; favors pragmatic TDD",
+      "work_environment": "Async-friendly, high-impact teams with minimal red tape",
+      "communication": "Direct, clear, goal-oriented"
+    },
+    "personal_traits": {
+      "strengths": [
+        "Fast learner",
+        "Creative and systematic thinker",
+        "High personal and professional standards",
+        "Enjoys teaching and coaching",
+        "Thrives in zero-to-one environments",
+        "Proactively solves problems",
+        "Visionary long-term thinker",
+        "Extreme ownership of responsibilities"
+      ],
+      "weaknesses": [
+        "Reluctant to ask for help",
+        "Gets bored after solving a problem",
+        "Overcommits due to high standards",
+        "Perfectionism may slow progress",
+        "Can over-abstract ideas"
+      ]
+    },
+    "team_and_collaboration": {
+      "collaboration_style": "Pair programming, code reviews, knowledge sharing",
+      "managerial_style": {
+        "ownership": "Takes full responsibility for team outcomes",
+        "feedback": "Praises publicly, criticizes privately",
+        "autonomy": "Provides direction and trusts execution",
+        "goal_setting": "Uses clear, measurable goals"
+      },
+      "advice_for_collaborators": [
+        "Be direct and honest",
+        "Challenge ideas with 'why'",
+        "Give ambitious goals and impact-driven feedback",
+        "Maintain high standards"
+      ]
+    },
+    "interests": {
+      "sports": ["NBA - Boston Celtics", "Tennis", "Table Tennis", "Pickleball"],
+      "hobbies": ["Kayaking", "Reading", "Conversations"],
+      "books": [
+        { "title": "Show Your Work", "takeaway": "Creativity thrives by sharing your process." },
+        { "title": "Deep Work", "takeaway": "Deep focus produces the best results." },
+        { "title": "Don't Believe Everything You Think", "takeaway": "Challenge your negative thoughts." },
+        { "title": "Mastery", "takeaway": "Mastery requires deliberate practice and mentorship." }
+      ],
+      "quotes": [
+        "People don't buy products, they buy feelings.",
+        "That which hinders your task, is your task.",
+        "If you can't go over, go through."
+      ]
+    }
+  }
+  

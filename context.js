@@ -192,10 +192,6 @@ const userManualJson = {
           "takeaway": "Creativity thrives through sharing your process generously."
         },
         {
-          "title": "The 4-Hour Work Week",
-          "takeaway": "Not about working less but about optimizing for impact via the 80/20 rule."
-        },
-        {
           "title": "Deep Work",
           "takeaway": "Deep focus yields your best work, not multitasking."
         },
