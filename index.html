@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(Probably) The Craziest Application You've Received For Your Content Writer Role</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: transform 0.2s;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.05);
+        }
+
+        .chat-container {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-container.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .chat-header h2 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .chat-header p {
+            opacity: 0.9;
+            font-size: 12px;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 18px;
+            line-height: 1.4;
+            font-size: 14px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background: #f8f9fa;
+            color: #333;
+            border: 1px solid #e9ecef;
+        }
+
+        .chat-input-container {
+            padding: 15px;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 2px solid #e9ecef;
+            border-radius: 20px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .chat-input:focus {
+            border-color: #667eea;
+        }
+
+        .send-button {
+            padding: 10px 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .send-button:hover {
+            transform: translateY(-1px);
+        }
+
+        .typing-indicator {
+            align-self: flex-start;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 12px;
+            border-radius: 18px;
+            display: none;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .typing-dots span {
+            width: 6px;
+            height: 6px;
+            background: #999;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-6px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Leon B. Fray</div>
+            <div class="subtitle">(Probably) The most Committed Application You've Received For Your Chrome Extension Engineer Role</div>
+        </div>
+        <!-- <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Writing</a></li>
+                <li><a href="#">Things I love</a></li>
+                <li><a href="#">Case Study</a></li>
+            </ul>
+        </nav> -->
+    </header>
+
+    <main>
+        <article>
+            <h1>(Probably) The most Committed Application You've Received For Your Chrome Extension Engineer Role</h1>
+
+       
+
+            <p>Hi OneText team (Jonathon? Daniel?),</p>
+            <p>About four weeks ago, you opened a role for a browser extension engineer at OneText. Maybe you've already received some great applications. Maybe you're still waiting for the right candidate.</p>
+            <p>Am I that right person?</p>
+
+            <p><strong>I hope so. But- after reading all of this, you'll either shoot me an email or just think I'm crazy.</strong></p>
+            <p>That's because this is not a conventional application. I'm not spray-and-praying my resume at job openings and appending a ChatGPT-written cover letter. <strong>This is the exact opposite.</strong></p>
+            <p>As you'll see, everything here was carefully considered and thought out.</p>
+            <p>But before we get into what I created for you, let's answer a few questions:</p>
+
+            <h2>Why do I want to work at OneText?</h2>
+            <p>Your product and mission are awesome. But what's most exciting is your focus on a small, high-impact team.</p>
+            <p>Your build fast, ship fast and if it doesn't work- kill it culture —that's what I love.</p>
+            <p>But the most important aspect is growth: Besides working on an awesome product with impressive people, I love growing and learning, which you seem to embody.</p>
+
+            <h2>What makes me qualified for this?</h2>
+            <p>You'll gain someone who has experience (since 2021) in many areas of software development, ranging from project management to backend development; from reviewing software to selling software.</p>
+            <p>And, you'll work with someone who cares about this space and keeps learning.</p>
+
+            <h2>Those are normal parts of an application. But I don't believe in normal applications.</h2>
+            <p>Instead, I believe in the following:</p>
+            <blockquote>
+                <p>The best way to get the job is to do the job <em>before</em> you get the job.</p>
+                <p>- Noah Kagan</p>
+            </blockquote>
+            <p>That's why, after looking at your github I thought of a better way to handle your conversational flow, <a href="https://github.com/Leon-Fray/oneTextFlowChart" style="text-decoration: none;"> a flow chart </a> (its even in the name) so I immediately got to making it because I thought it was a good idea. Such a good idea in fact, that I read your blogs and realized you had already implemented one- so I killed it. Then went back to the drawing board to think of something else, a little bit more off the wall. Then got the polarizing thought, "Winning back customers who have abandoned carts- with a negotiation campaign for the sms bot". Here you can see a <a href="https://docs.google.com/document/d/1PcxDinvJdZ_376EhX31vV9HpkricQgklnJDJY280dRY/edit?usp=sharing" style="text-decoration: none;"> demo </a> of what I'd imagine this idea to look like as well as a 10 page article on how I think it could add value to OneText.</p>
+            <p>And, because you're not looking for a one-track browser extension engineer, I've also created <a href="https://www.figma.com/design/1234567890/OneText-Dashboard-Home?node-id=0-1&t=0-0" style="text-decoration: none;"> a figma design </a> for the dashboard home. Before you get the article link, you should know why that article.</p>
+            <p>Before you get the article link, you should know <em>why:</em></p>
+            <ol>
+                <li>It gives customers a more fulfilling and human experience</li>
+                <li>It can help market managers hold more profit by saving on discounts</li>
+                <li>If it doesnt work we kill it</li>
+                   
+            </ol>
+            <p>Feel free to click the link, have a read and (hopefully)<a href="https://docs.google.com/document/d/1PcxDinvJdZ_376EhX31vV9HpkricQgklnJDJY280dRY/edit?usp=sharing" style="text-decoration: none;"> enjoy. </a>Just don't forget to come back here to unwrap your next present.</p>
+            <p>Back from reading? I hope you enjoyed—and that you're ready for the next thing. Sure, you value skills. But other things matter as well, right?</p>
+            <p>While you can always find out more on a call, why not get some questions answered now? Drag that mouse to the right and open the chatbot.</p>
+            <p>If you enter something and feel it's reading your mind—that's because I asked GPT-4 to be <strong>you</strong> for the source material. I fed it:</p>
+            <ul>
+                <li><a href="https://docs.google.com/document/d/1xENilAciHEuJ8-ytCx7hjWHJMeTqql8KDVS_WcZb_Gg/edit?usp=sharing" style="text-decoration: none;"> resume </a></li>
+                <li><a href="https://docs.google.com/document/d/1cG_cvfG89i0PaARKvsV3J6HJY3zs19ESWuuDkIoGh2s/edit?usp=sharing" style="text-decoration: none;"> My user's manual (how I like to work, also added as a help doc)</a></li>
+                <li>The job description</li>
+            </ul>
+            <p>And then prompted it "What questions would you ask me if you were the founder?"</p>
+            <p>I uploaded those questions and answered them, and of course you can always get the longer-form answer from the source (me) </p>
+            <p>That'll tell you a lot more about me. And by the time you're done, you might've drawn a conclusion on whether I'm awesome, crazy or both.</p>
+            <p>Before you leave this page, here's a few content ideas ranging from obvious to insane. Feel free to steal, ignore or laugh at:</p>
+            <ul>
+                <li><strong>Share & Save:</strong>If a cart is abandoned, offer a larger discount if the user shares a unique SMS link with a friend who then makes a purchase.</li>
+                <li><strong>Desgin your Discount:</strong>  For abandoned carts over a certain value, let the user choose their discount type via SMS (e.g., "Reply 'PERCENT' for 15% off or 'FREE' for free shipping"). This gives them a sense of control.</li>
+                <li><strong>Automatic Stock Alerts:</strong>For popular items in an abandoned cart, send a text like: "Heads up! Only 2 left of that [item name]. Reply 'CLAIM' to jump the queue and purchase instantly!" This creates immediate pressure.</li>
+                <li><strong>Playful Cart Reminders:</strong> When a cart is abandoned, instead of a standard reminder, send a text saying, "Your items are trapped!" "Give these items a good home." Similiar to the duolingo app reminders.</li>
+            </ul>
+            <p>Those are a few content ideas in addition to all the awesome ones I'm sure you have. And if you'd like to chat now, you can hit that button in the questlist, send me an email, and let's chat!</p>
+            <p>-Leon</p>
+            <p>P.S.: While you just read and saw a lot of stuff, I wanted to share something a bit more heartfelt too. There's a reason I put dozens of hours into building all of this: I'd really love to work with you—From the product to the team and the culture to the role itself, this sounds like an awesome fit for me. I love solving problems, I love building awesome things together and I love technology.</p>
+           
+            
+        </article>
+    </main>
+
+    <footer>
+        <!-- Optional: Add footer content here -->
+    </footer>
+
+    <div class="chat-widget">
+        <button class="chat-button" id="chatButton">💬</button>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h2>Chat with Leon</h2>
+                <p>Ask me anything about my application</p>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    Hi! I'm here to answer any questions you have about my application. Feel free to ask anything!
+                </div>
+            </div>
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+                <button class="send-button" id="sendButton">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="context.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatButton = document.getElementById('chatButton');
+            const chatContainer = document.getElementById('chatContainer');
+            const chatMessages = document.getElementById('chatMessages');
+            const chatInput = document.getElementById('chatInput');
+            const sendButton = document.getElementById('sendButton');
+            const typingIndicator = document.getElementById('typingIndicator');
+
+            // Toggle chat window
+            chatButton.addEventListener('click', () => {
+                chatContainer.classList.toggle('active');
+            });
+
+            // Send message function
+            async function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    // Add user message
+                    const userMessageDiv = document.createElement('div');
+                    userMessageDiv.className = 'message user-message';
+                    userMessageDiv.textContent = message;
+                    chatMessages.appendChild(userMessageDiv);
+
+                    // Clear input
+                    chatInput.value = '';
+
+                    // Show typing indicator
+                    typingIndicator.style.display = 'block';
+
+                    try {
+                        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${config.OPENAI_API_KEY}`
+                            },
+                            body: JSON.stringify({
+                                model: config.CHATBOT_CONFIG.model,
+                                messages: [
+                                    {
+                                        role: "system",
+                                        content: config.CHATBOT_CONFIG.system_prompt
+                                    },
+                                    {
+                                        role: "user",
+                                        content: `Here is the context from the JSON files:
+
+QUESTIONS.JSON:
+${JSON.stringify(questionsJson, null, 2)}
+
+BONUS_QUESTIONS.JSON:
+${JSON.stringify(bonusQuestionsJson, null, 2)}
+
+USER_MANUAL.JSON:
+${JSON.stringify(userManualJson, null, 2)}
+
+User question: ${message}`
+                                    }
+                                ],
+                                temperature: config.CHATBOT_CONFIG.temperature,
+                                max_tokens: config.CHATBOT_CONFIG.max_tokens
+                            })
+                        });
+
+                        const data = await response.json();
+                        
+                        if (data.choices && data.choices[0]) {
+                            const botMessageDiv = document.createElement('div');
+                            botMessageDiv.className = 'message bot-message';
+                            botMessageDiv.textContent = data.choices[0].message.content;
+                            chatMessages.appendChild(botMessageDiv);
+                        } else {
+                            throw new Error('Invalid response from API');
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        const errorMessageDiv = document.createElement('div');
+                        errorMessageDiv.className = 'message bot-message';
+                        errorMessageDiv.textContent = "I apologize, but I'm having trouble connecting right now. Please try again later.";
+                        chatMessages.appendChild(errorMessageDiv);
+                    } finally {
+                        typingIndicator.style.display = 'none';
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }
+                }
+            }
+
+            // Send message on button click
+            sendButton.addEventListener('click', sendMessage);
+
+            // Send message on Enter key
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            // Scroll to bottom of messages
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+    </script>
+</body>
+</html> 

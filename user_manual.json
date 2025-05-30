@@ -1,0 +1,81 @@
+{
+    "user_manual": {
+      "name": "Leon Fray",
+      "overview": "This manual outlines how Leon likes to work, covering his strengths, weaknesses, work preferences, collaboration advice, management style, interests, and personal philosophies.",
+      "strengths": [
+        "Fast learner",
+        "Creative and open to diverse perspectives",
+        "Systematic thinker with an emphasis on learning from failure",
+        "Enjoys teaching and coaching others",
+        "Thrives in zero-to-one, chaotic environments",
+        "Proactively identifies and solves problems",
+        "High personal and professional standards",
+        "Visionary thinker with long-term focus",
+        "Extreme ownership of responsibilities"
+      ],
+      "weaknesses": [
+        "Reluctant to ask for help",
+        "Gets bored after solving a problem",
+        "Fear of disappointing others may lead to overcommitment",
+        "Perfectionism may slow progress",
+        "Can be overly abstract and not ground ideas in action"
+      ],
+      "work_style": {
+        "communication": "I prefer clear, direct communication and regular check-ins. I'm comfortable with both async and real-time collaboration.",
+        "process": "I work best with a mix of structure and flexibility. I like to have clear goals but appreciate the freedom to find the best path to achieve them.",
+        "collaboration": "I enjoy pair programming and code reviews. I believe in sharing knowledge and helping team members grow.",
+        "tools": "I'm proficient with modern development tools and always open to learning new ones that can improve our workflow."
+      },
+      "advice_for_collaborators": [
+        "Call me out—persuasiveness doesn't equal correctness.",
+        "Be direct and honest; don't sugarcoat.",
+        "Ask 'why'—always understand the reasoning behind my efforts.",
+        "Maintain high standards and give honest, tough feedback.",
+        "Give clear, ambitious goals and metrics that show impact."
+      ],
+      "management_style": {
+        "ownership": "Takes full responsibility for everything the team does.",
+        "praise_and_criticism": "Praise in public, criticize in private.",
+        "autonomy": "Provides strategic direction and trusts the team to execute without micromanagement.",
+        "processes": "Creates systems that reduce meetings and improve output quality.",
+        "goal_driven": "Focuses the team on clear, falsifiable goals rather than pleasing the manager."
+      },
+      "interests": {
+        "sports": ["NBA - Boston Celtics", "Tennis", "Table Tennis", "Pickleball"],
+        "hobbies": ["Kayaking", "Reading", "Good conversations"],
+        "book_recommendations": [
+          {
+            "title": "Show Your Work",
+            "takeaway": "Creativity thrives through sharing your process generously."
+          },
+          {
+            "title": "The 4-Hour Work Week",
+            "takeaway": "Not about working less but about optimizing for impact via the 80/20 rule."
+          },
+          {
+            "title": "Deep Work",
+            "takeaway": "Deep focus yields your best work, not multitasking."
+          },
+          {
+            "title": "Don't Believe Everything You Think",
+            "takeaway": "Challenge your negative thoughts—they are not facts."
+          },
+          {
+            "title": "Mastery",
+            "takeaway": "True mastery comes from deliberate practice and mentorship."
+          }
+        ]
+      },
+      "favorite_quotes": [
+        "People don't buy products, they buy feelings.",
+        "That which hinders your task, is your task.",
+        "If you can't go over, go through."
+      ],
+      "preferences": {
+        "meetings": "I prefer shorter, focused meetings with clear agendas. I'm a fan of async communication for non-urgent matters.",
+        "feedback": "I welcome constructive feedback and believe it's crucial for growth. I'm also comfortable giving feedback in a respectful way.",
+        "learning": "I'm constantly learning and enjoy sharing knowledge with the team. I believe in learning by doing and through collaboration."
+      }
+    }
+  }
+  

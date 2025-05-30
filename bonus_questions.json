@@ -1,0 +1,58 @@
+{
+  "interview_questions_chrome_extension_engineer": [
+    {
+      "question": "Have you ever worked with browser APIs, or built browser-based tools or extensions?",
+      "answer": "Yes I have actually built a few chrome extensions mainly to help me learn, one of my favourtie ones being a chrome extension that uses open ai's api to read english articles and have a conversation with me about them in french. And of course I amde this extension to help me learn french."
+    },
+    {
+      "question": "How would you approach building a lightweight Chrome extension MVP in under 2 weeks?",
+      "answer": "First, I'd define the core use case and user interaction — ideally the 'one thing' the extension must do well. I'd then: (1) outline a simple UI, (2) use manifest v3 with background and content scripts, (3) add logging and error boundaries, (4) package and test it locally, and (5) implement basic permissions and analytics if time allows. I'd track metrics early to validate usefulness and kill it fast if it doesn't stick — which aligns well with OneText's MVP cycle."
+    },
+    {
+      "question": "What's one optimization you'd make for performance in a Chrome extension?",
+      "answer": "I'd avoid unnecessary background script execution by using event-driven APIs like chrome.runtime.onMessage and chrome.tabs.onUpdated. I'd also minimize content script injections and cache data using chrome.storage.local to avoid redundant network calls."
+    },
+    {
+      "question": "What do you think makes a good user experience in a browser extension?",
+      "answer": "A good extension should be non-intrusive, respond instantly, have a clear purpose, respect user privacy, and request minimal permissions. It should feel like a seamless power tool in the user's workflow—fast, simple, and reliable."
+    },
+    {
+      "question": "Tell me about a time you built something under constraints or unclear requirements.",
+      "answer": "In my capstone project, I built a secure RESTful API system with JWT auth, but the business logic kept evolving. Instead of waiting on finalized requirements, I proposed modular routes that we could easily extend. That let us ship an MVP early and adapt features as needed—an approach that fits fast-moving startup environments well."
+    },
+    {
+      "question": "How do you think about permissions in Chrome extensions?",
+      "answer": "I see permissions as a contract with the user. I always aim to request the minimum required permissions up front and defer optional ones using chrome.permissions.request() as needed. That reduces friction and builds user trust."
+    },
+    {
+      "question": "How would you test and debug a Chrome extension?",
+      "answer": "I'd use the Chrome Extensions panel in DevTools to inspect background/content scripts, log key events, and write unit tests for logic-heavy parts using tools like Jest. I'd also test flows manually with sample data and consider building feedback reporting into early builds."
+    },
+    {
+      "question": "How do your personal working preferences align with remote async work in a fast-moving team?",
+      "answer": "Perfectly. I value long, uninterrupted focus blocks and minimal meetings—exactly what async, remote environments offer. I communicate clearly, take ownership of results, and thrive in systems that prioritize outcome over process."
+    },
+    {
+      "question": "What's a UX/technical problem you think Chrome extensions are uniquely suited to solve?",
+      "answer": "Chrome extensions are great for streamlining repetitive browser tasks like form autofill, scraping structured data from websites, or summarizing text with AI. These use cases are hard to deliver well in standalone web apps but ideal for lightweight, context-aware extensions."
+    },
+    {
+      "question": "How would you bring value beyond just the role of a Chrome extension engineer?",
+      "answer": "I bring systems thinking, product awareness, and a drive to improve team processes. I proactively spot opportunities for improvement, help others grow, and offer backend expertise for syncing and securing extension data. I'm not just here to write code—I'm here to make the product and team better."
+    }
+  ],
+  "questions": [
+    {
+      "question": "What's your approach to problem-solving?",
+      "answer": "I believe in breaking down complex problems into smaller, manageable pieces. I start by understanding the requirements thoroughly, then design a solution, implement it iteratively, and test as I go. I'm not afraid to pivot if something isn't working as expected."
+    },
+    {
+      "question": "How do you handle technical challenges?",
+      "answer": "I tackle technical challenges by first researching existing solutions, then prototyping the most promising approach. I'm comfortable asking for help when needed and believe in documenting solutions for future reference."
+    },
+    {
+      "question": "What's your favorite project you've worked on?",
+      "answer": "One of my favorite projects was developing a browser extension that integrated AI capabilities for real-time content analysis. It combined my interests in AI, user experience, and browser extension development."
+    }
+  ]
+}

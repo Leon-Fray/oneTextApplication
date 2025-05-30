@@ -1,0 +1,86 @@
+{
+  "interview_questions": [
+    {
+      "question": "Tell me about Leon",
+      "answer": "Leon is a software devenloper with three years of experience and has mostly utilized Typescript/React/Next.js. He loves solving problems and making interesting things, like https://github.com/Leon-Fray/frenchChromeTutor. He also loves Tennis and watching NBA (☘️)"
+    },
+    {
+      "question": "What was your last/current role, and why do you want to change now?",
+      "answer": "My last role was a Software Engineer at Hexagon, where I've worked on building scalable back-end services for their OnCall Dispatch Smart Advisor product. I implemented RESTful APIs, optimized MongoDB indexing, and helped design reusable modules to speed up development. I'm looking to change now because I want to work in a faster-paced, startup environment where I can contribute across the stack and help shape the product and engineering culture—something that aligns closely with OneText's approach."
+    },
+    {
+      "question": "What's your ideal next role? If you had carte-blanche, what would the position, responsibilities, engineering culture etc. look like?",
+      "answer": "My ideal role would allow me to work in a product-focused team, owning meaningful features end-to-end. I'd love to work in a culture that emphasizes fast iteration, rapid MVPs, and learning by doing. A lean process with quick feedback loops, really appeals to me. I'd also appreciate the opportunity to mentor or eventually lead other engineers as the company grows."
+    },
+    {
+      "question": "Can you show me some code you wrote or an app or platform or library that you're proud of building, and talk me through how it works?",
+      "answer": "Yes. I built a full stack healthcare appointment app using the MERN stack. It includes role-based authentication, MVC structure, and an admin panel. I can walk through backend structure, routing logic, and how JWT authentication is handled. GitHub: https://github.com/Leon-Fray/AppointmentBookingProject"
+    },
+    {
+      "question": "When Jonathan first pitched me on building a new product with SMS I thought it was a bit silly. Why does it appeal to you?",
+      "answer": "SMS is deceptively powerful. It's immediate, and doesn't require a smartphone or app install. That makes it perfect for reaching users quickly, whether for transactions, reminders, or automation. From a developer's perspective, it's a fun challenge to build UX and automation around such a constrained but universal medium. Plus, the conversion and engagement rates for SMS are often much higher than email or app notifications."
+    },
+    {
+      "question": "What was the most interesting or challenging integration you've done with another platform, or API?",
+      "answer": "At Hexagon, I integrated a role-based access control system that interacted with third-party identity services. At Northvolt, automating QA tests that aligned API responses with real-time hardware outputs was also challenging—ensuring the accuracy of defect detection at scale."
+    },
+    {
+      "question": "Do you lean more towards building UX, front-end, apis, working with databases, or do you like to be 'full stack' and go where you're most needed?",
+      "answer": "I enjoy front-end work when it's about building thoughtful, usable interfaces, but I'm probably most comfortable building robust, secure APIs and handling backend logic. I've worked extensively with Node.js, MongoDB, and Express.js, but I enjoy touching every layer when needed."
+    },
+    {
+      "question": "Why a startup? Why not join a big corp?",
+      "answer": "I've done corporate—great structure, but sometimes too much red tape. I want to work somewhere where I can move fast, see the direct impact of what I build, and help shape the direction of the product. Startups give you that kind of ownership and learning curve, and that excites me."
+    },
+    {
+      "question": "What do you hate about <insert technology> you've used in the past? If you had full creative control, what would you change about it?",
+      "answer": "MongoDB is great for flexibility, but that schema-less nature can backfire without discipline—especially as a team scales. I've seen issues where loosely enforced structures made it harder to query and maintain data consistency. If I had creative control, I'd add optional schema enforcement by default, and stronger tooling for introspecting schema drift."
+    },
+    {
+      "question": "What's your preferred approach to testing, static checks, etc? And do you like TDD?",
+      "answer": "I lean toward pragmatic testing—unit tests for core logic, integration tests for API flows, and Postman or automated scripts for end-to-end. I use TDD in cases where the logic is complex and benefits from guiding the implementation, but I don't strictly follow it in all cases. Linting and static checks (like ESLint or TypeScript) are part of my daily workflow."
+    },
+    {
+      "question": "Let's pair-code something in the language/framework of your choice...",
+      "answer": "Yes! I use VS Code and can screen share with everything set up. I'm happy to build a front-end component, a helper function, or sketch out a basic API—whatever fits the use case."
+    },
+    {
+      "question": "Do you see yourself as more of an individual contributor, or do you aspire to be more of an engineering lead as we grow and hire?",
+      "answer": "I'm confident as an Individual contriibutor now, but I'm working toward becoming a lead. I'd love to grow into a leadership role as OneText scales."
+    },
+    {
+      "question": "Do you like to have engineering requirements completely set in stone before you start work, or are you comfortable starting building based on a mostly-formed idea that will evolve over time?",
+      "answer": "I'm very comfortable working with a rough idea and evolving it while building. That said, I do like to clarify the interface and end goals upfront so I don't build something that conflicts with future needs. The MVP-first mindset fits me perfectly."
+    },
+    {
+      "question": "Tell me about a time you said no to someone in a position of power over you.",
+      "answer": "At Hexagon, a senior PM wanted to skip certain QA tests to meet a deadline. I explained the risk of letting defective units pass into production and offered a compromise: reduce test sample size temporarily, but keep automated regression tests active to catch anomalies. That preserved both delivery and safety."
+    },
+    {
+      "question": "Tell me about something you did in the past that ended up being way too complicated, and how you helped simplify it.",
+      "answer": "In an early project, I built a custom auth middleware with layered permission checks, session validation, etc. It worked but was bloated. Later I refactored using Passport.js and JWT, which simplified the codebase drastically and made it easier for others to contribute."
+    },
+    {
+      "question": "What's YOUR favorite interview question, to pick a good engineer?",
+      "answer": "If you had to rewrite one part of your favorite app from scratch, what would it be and why? It reveals how deeply they've thought about architecture, user experience, and trade-offs."
+    },
+    {
+      "question": "What's something cool you've done with AI recently?",
+      "answer": "I recently built a chrome extension that uses open AI's API to analyze websites and allow users to discuss articles with it in french via voice or text."
+    }
+  ],
+  "questions": [
+      {
+          "question": "What is your experience with browser extensions?",
+          "answer": "I have experience developing browser extensions since 2021, focusing on creating user-friendly interfaces and implementing complex functionality. I'm particularly interested in how browser extensions can enhance user productivity and experience."
+      },
+      {
+          "question": "Why do you want to work at OneText?",
+          "answer": "I'm drawn to OneText's focus on a small, high-impact team and your build-fast, ship-fast culture. I love the idea of working on an awesome product with impressive people while continuously growing and learning."
+      },
+      {
+          "question": "What makes you qualified for this role?",
+          "answer": "I bring experience and clearly initiative. including project management, backend development, software review, and sales. I'm passionate about this space and committed to continuous learning."
+      }
+  ]
+}
