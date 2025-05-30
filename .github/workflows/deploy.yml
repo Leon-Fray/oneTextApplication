@@ -1,0 +1,51 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # Or your preferred Node.js version
+
+      - name: Install dependencies
+        run: npm install # Add this if you have a package.json and dependencies
+
+      - name: Inject API Key
+        run: |
+          # Replace the placeholder with the actual secret value
+          # We use single quotes around the sed pattern and replacement
+          # to prevent shell expansion issues with special characters in the key.
+          # The 's/pattern/replacement/g' syntax replaces all occurrences.
+          # We also escape forward slashes in the key using sed's '|' delimiter
+          ESCAPED_API_KEY=$(echo "${{ secrets.OPENAI_API_KEY }}" | sed -e 's/\\/\\\\/g' -e 's/\//\\\//g' -e 's/&/\\&/g')
+          sed -i 's|process.env.VITE_OPENAI_API_KEY|"'$ESCAPED_API_KEY'"|g' config.js
+        env:
+          # Make the secret available as an environment variable during this step
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: . # Upload the entire repository contents as the artifact
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 
